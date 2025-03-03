@@ -30,7 +30,7 @@ class Birthday(Field):
             date_obj = datetime.strptime(value, "%d.%m.%Y").date()
             if date_obj > datetime.today().date():
                 raise ValueError("Birthday cannot be in the future.")
-            self.value = date_obj
+            self.value = value
         except ValueError:
             raise ValueError("Invalid date format. Use DD.MM.YYYY")
 
